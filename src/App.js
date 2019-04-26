@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
+import WrongComponent from './components/WrongComponent';
 
 const App = () => (
-    <span>Welcome to <b>React Error Treatment Class</b></span>
+    <WrongComponent />
 );
 
 export default App;
