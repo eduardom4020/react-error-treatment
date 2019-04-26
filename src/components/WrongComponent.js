@@ -1,19 +1,29 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, Component} from 'react';
 
 const thisWill = null;
 
-const WrongComponent = props => {
-    try {
-        return(
-            <span>{thisWill.causeAnError}</span>
-        );
-    } catch (err) {
-        return (
-            <Fragment>
-                <h1>ERROR!</h1>
-                <span>{err.toString()}</span>
-            </Fragment>
-        );
+class WrongComponent extends Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        const errorStrikesBack = thisWill.causeAnError;
+    }
+
+    render() {
+        try {
+            return(
+                <span>{thisWill.causeAnError}</span>
+            );
+        } catch (err) {
+            return (
+                <Fragment>
+                    <h1>ERROR!</h1>
+                    <span>{err.toString()}</span>
+                </Fragment>
+            );
+        }
     }
 };
 
