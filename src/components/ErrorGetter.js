@@ -19,6 +19,13 @@ class ErrorGetter extends Component {
         });
     }
 
+    tryAgain = () => {
+        this.setState({
+            err: null,
+            info: null
+        });
+    }
+
     render() {
         const { children } = this.props;
         const { err, info } = this.state;
@@ -32,6 +39,9 @@ class ErrorGetter extends Component {
                     <span>{info}</span>
                     <br/>
                     <span>{err}</span>
+                    <br/>
+                    <h5>Click to Refresh Component!</h5>
+                    <button onClick={this.tryAgain} >Refresh</button>
                 </Fragment>
         );
     }
